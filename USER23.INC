@@ -59,8 +59,14 @@
 ;UKSC new values (JB)
 ; (target voltage) / ( mV per Count) = number of counts needed 
 ;( 148 volts / 208.79mV per Count) = 709 Counts = 0x02c4
-#define MAXUOH      0x02
-#define MAXUOL      0xc4
+;#define MAXUOH      0x02
+;#define MAXUOL      0xc4
+
+;NUSOLAR values (for new generation [v3] drivetek) (AM)
+#define MAXUOH		0x02		; 117.6 V: Max Batt. volt HByte 
+					; in 196.97 mV Units
+#define MAXUOL		0x55		; 117.6 V: Max Batt. volt LByte in
+					; 196.97 mV Unit
 
 
 ;**********************************************************************
@@ -74,8 +80,15 @@
 ;(target Voltage) / (mV per Count) = number of counts needed
 ;(37.79 votls) / ( 150.49 mV / per count) = 251 = 0x00FB
 
-#define MINUINH 0x00
-#define MINUINL	0xFB
+;#define MINUINH 0x00
+;#define MINUINL	0xFB
+
+;NUSOLARs new values (AM)
+#define MINUINH	0x00	; Min  input voltage HByte 26V in 150.49 mV Units
+#define MINUINL	0xAD	; Min  input voltage LByte 26V; in 150.49 mV Units
+
+
+
 ;**********************************************************************
 ;Min Output Voltage, used for Precharge
 ;**********************************************************************
@@ -85,8 +98,13 @@
 ;UKSC new values (JB)
 ;(target Voltage) / (mV per Count) = number of counts needed
 ;(90 volts) / (208.79 mV perCount) = 433  = 0x01b1
-#define MINUBATH   0x01
-#define MINUBATL   0xb1
+;#define MINUBATH   0x01
+;#define MINUBATL   0xb1
+
+;NUSOLAR new values (AM)
+#define MINUBATH	0x01	; Min output voltage HByte 84 V in 196.97 mV  Units
+#define MINUBATL	0xAA	; Min output voltage LByte 84 V in 196.97  mV  Units
+
 ;**********************************************************************
 ;   border ot discontinuous mode 
 ;   ON-Values have to be greater than OFF-Values
@@ -117,6 +135,9 @@
 ;(target Voltage) / (mV per Count) = number of counts needed
 ;( 69.37 volts) / (150.49 mV perCount) = 461 = 0x01CD
 
-#define UmppH 0x01      
-#define UmppL 0xCD	                                                                                                                                                                                                                                                                                                            
+;#define UmppH 0x01      
+;#define UmppL 0xCD	                                                                                                                                                                                                                                                                                                            
 
+;NUSOLARs new values
+#define UmppH 0x02      ; Mpp input voltage HByte 86 V in 150.49 mV Units
+#define UmppL 0x3B	    ; Mpp input voltage LByte 86 V in 150.49 mV Units     
